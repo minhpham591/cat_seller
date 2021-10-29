@@ -1,0 +1,4 @@
+#Fri Oct 29 21:55:23 ICT 2021
+base.0=D\:\\CatApp\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
