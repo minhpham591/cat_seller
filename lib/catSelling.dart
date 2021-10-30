@@ -17,7 +17,7 @@ class catSelling extends StatelessWidget {
         FirebaseFirestore.instance.collection('catForSell');
 
     return StreamBuilder<QuerySnapshot>(
-      stream: cat.snapshots(),
+      stream: cat.where('numberphone', isNotEqualTo: phone).snapshots(),
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (snapshot.hasError) {
           return Text('Something went wrong');

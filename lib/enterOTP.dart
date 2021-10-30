@@ -101,7 +101,7 @@ class EnterOTP extends StatelessWidget {
                   "Hãy nhập OTP chúng tôi vừa gửi",
                   textAlign: TextAlign.center,
                   style: style.copyWith(
-                    fontSize: 40,
+                    fontSize: 25,
                       color: Colors.deepOrangeAccent, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 30),

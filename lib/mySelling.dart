@@ -13,7 +13,7 @@ class mySelling extends StatelessWidget {
    CollectionReference cat =FirebaseFirestore.instance.collection('catForSell');
 
     return StreamBuilder<QuerySnapshot>(
-      stream: cat.snapshots(),
+      stream: cat.where('numberphone', isEqualTo: phone).snapshots(),
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (snapshot.hasError) {
           return Text('Something went wrong');
