@@ -30,8 +30,28 @@ class catSelling extends StatelessWidget {
         return new ListView(
           children: snapshot.data!.docs.map((DocumentSnapshot document) {
             return new ListTile(
-              title: new Text(document.data()['name']),
-              subtitle: new Text(document.data()['price']),
+              title:  Container(
+                margin: const EdgeInsets.all(1.0),
+                      padding: const EdgeInsets.all(1.0),
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(color: Colors.grey, width: 0.25),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.1),
+                              spreadRadius: 1,
+                              blurRadius: 3,
+                              offset:
+                                  Offset(4, 8), // changes position of shadow
+                            ),
+                          ],
+                          borderRadius: BorderRadius.circular(10)),
+                          child: Row(children: [
+                            new Text(document.data()['name']),
+                            new Text(document.data()['price'])
+                          ],),
+              ),
               onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(

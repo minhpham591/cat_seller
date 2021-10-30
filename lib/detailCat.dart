@@ -127,7 +127,35 @@ class CatDetail extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 100.0,
+            height: 75.0,
+          ),
+           Container(
+            width: 300.00,
+
+            child: FlatButton(
+                onPressed: ()=>launch("tel:$phone"),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(80.0)
+                ),
+                padding: EdgeInsets.all(0.0),
+                child: Ink(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        begin: Alignment.centerRight,
+                        end: Alignment.centerLeft,
+                        colors: [Colors.white]
+                    ),
+                    borderRadius: BorderRadius.circular(30.0),
+                  ),
+                  child: Container(
+                    constraints: BoxConstraints(maxWidth: 300.0, minHeight: 75.0),
+                    alignment: Alignment.center,
+                    child: Text("Xem thêm về những chiếc mèo khác mà người này đang bán",
+                      style: TextStyle(color: Colors.black, fontSize: 10.0, fontStyle: FontStyle.italic),
+                    ),
+                  ),
+                )
+            ),
           ),
           Container(
             width: 300.00,

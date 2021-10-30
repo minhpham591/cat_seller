@@ -28,7 +28,7 @@ showAlertSuccessUpdate(BuildContext context) {
       color: Colors.orangeAccent,
       onPressed: () {
         Navigator.of(context).pop();
-        
+
       },
     );
     AlertDialog alert = AlertDialog(
@@ -125,7 +125,7 @@ class _NewCreate extends State<NewCreate> {
                     style: style,
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-                      hintText: "Tên",
+                      hintText: "Giống mèo",
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12)),
                     ),
