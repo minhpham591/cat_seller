@@ -71,8 +71,8 @@
 45        android:debuggable="true"
 46        android:icon="@mipmap/ic_launcher"
 46-->D:\CatApp\android\app\src\main\AndroidManifest.xml:5:9-43
-47        android:label="catapp" >
-47-->D:\CatApp\android\app\src\main\AndroidManifest.xml:4:9-31
+47        android:label="HOOMAN CHOICE" >
+47-->D:\CatApp\android\app\src\main\AndroidManifest.xml:4:9-38
 48        <activity
 48-->D:\CatApp\android\app\src\main\AndroidManifest.xml:6:9-34:20
 49            android:name="com.minhpt.catapp.MainActivity"

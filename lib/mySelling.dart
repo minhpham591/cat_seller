@@ -22,8 +22,9 @@ class mySelling extends StatelessWidget {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Text("Loading");
         }
-
+       
         return new ListView(
+          
           children: snapshot.data!.docs.map((DocumentSnapshot document) {
             return new ListTile(
               title: new Text(document.data()['name']),
