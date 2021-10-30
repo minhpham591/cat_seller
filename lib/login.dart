@@ -54,14 +54,14 @@ class _MyAppPageState extends State<Login> {
       style: style,
       decoration: InputDecoration(
           contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "Please enter Phone number",
+          hintText: "Nhập số điện thoại để đăng nhập",
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(12))),
       validator: (value) {
         value = value;
         if (value.toString().isEmpty) {
-          return 'Please enter phone number';
+          return 'Xin mời nhập số điện thoại';
         } else if (!regexPhone.hasMatch(value.toString())) {
-          return 'Phone number is not correct';
+          return 'Số điện thoại không đúng định dạng';
         } else {
           phone = "+84" + value.toString().substring(1);
         }
@@ -85,7 +85,7 @@ class _MyAppPageState extends State<Login> {
           }
         },
         child: Text(
-          "Sign In",
+          "Đăng Nhập",
           textAlign: TextAlign.center,
           style:
               style.copyWith(color: Colors.white, fontWeight: FontWeight.bold),

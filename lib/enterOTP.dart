@@ -98,7 +98,7 @@ class EnterOTP extends StatelessWidget {
                   height: 10,
                 ),
                 Text(
-                  "Input your OTP",
+                  "Hãy nhập OTP chúng tôi vừa gửi",
                   textAlign: TextAlign.center,
                   style: style.copyWith(
                     fontSize: 40,
@@ -123,7 +123,7 @@ class EnterOTP extends StatelessWidget {
       SnackBar(
         backgroundColor: Colors.red,
         duration: const Duration(seconds: 45),
-        content: const Text('OTP is wrong!!!'),
+        content: const Text('OTP sai!!!'),
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(20))),
