@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:catapp/home.dart';
 import 'package:catapp/create.dart';
+import 'package:catapp/catSelling.dart';
 /// This is the stateful widget that the main application instantiates.
  String phone="";
 class Menu extends StatefulWidget {
@@ -23,10 +24,7 @@ class _MyStatefulWidgetState extends State<Menu> {
 
    Create(phone),
    
-    Text(
-      'Index 2: School',
-      style: optionStyle,
-    ),
+    catSelling(phone),
   ];
 
   void _onItemTapped(int index) {

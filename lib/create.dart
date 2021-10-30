@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:catapp/createNew.dart';
+import 'package:catapp/mySelling.dart';
 String phone = "";
 
 class Create extends StatefulWidget {
@@ -50,7 +51,7 @@ class _Create extends State<Create> {
         body: TabBarView(
           children: [
             NewCreate(phone),
-            Text('data2'),
+            mySelling(phone),
           ],
         ),
       ),

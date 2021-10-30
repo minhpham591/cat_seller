@@ -4,7 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:catapp/model/cat.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
+FirebaseFirestore firestore = FirebaseFirestore.instance;
 String phone="";
 String name = "";
 
@@ -26,6 +28,7 @@ showAlertSuccessUpdate(BuildContext context) {
       color: Colors.orangeAccent,
       onPressed: () {
         Navigator.of(context).pop();
+        
       },
     );
     AlertDialog alert = AlertDialog(
@@ -44,19 +47,21 @@ showAlertSuccessUpdate(BuildContext context) {
       },
     );
   }
-
+CollectionReference cat = FirebaseFirestore.instance.collection('catForSell');
 Future<void> addNew(AddNew addNew, BuildContext context) async{
-    String url="https://617b8b0fd842cf001711bf24.mockapi.io/api/CatForSell";
-    var body = json.encode(addNew.toJson());
-    print(body);
-    final response = await http.post(url,body: body);
-    print(response.statusCode);
-    if(response.statusCode==201){
-      showAlertSuccessUpdate(context);
-    }
-    else{
-      throw Exception('Failed to load data');
-    }
+  
+    //String url="https://617b8b0fd842cf001711bf24.mockapi.io/api/CatForSell";
+    // var body = json.encode(addNew.toJson());
+    // print(body);
+    //final response = await http.post(url,body: body);
+    // print(response.statusCode);
+    // if(response.statusCode==201){
+    //   showAlertSuccessUpdate(context);
+    // }
+    // else{
+    //   throw Exception('Failed to load data');
+    // }
+    return cat.add(addNew.toJson()).then((value) => showAlertSuccessUpdate(context)).catchError((error)=>throw Exception('Failed to load data'));
 }
 class _NewCreate extends State<NewCreate> {
   TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20);
@@ -80,6 +85,7 @@ class _NewCreate extends State<NewCreate> {
           _addNew.price=price;
           _addNew.description=description;
           addNew(_addNew, context);
+          
           }
         },
         child: Text(
