@@ -1,3 +1,5 @@
+
+import 'package:catapp/otherSelling.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -16,6 +18,8 @@ class CatDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text('Chi tiết về ${name}',style: TextStyle(fontSize: 20, fontStyle: FontStyle.italic, fontFamily: "DancingScript"),),
+        centerTitle: true,),
       body: Column(
         children: [
           Container(
@@ -28,7 +32,7 @@ class CatDetail extends StatelessWidget {
               ),
               child: Container(
                 width: double.infinity,
-                height: 550.0,
+                height: 500.0,
                 child: Center(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -40,7 +44,7 @@ class CatDetail extends StatelessWidget {
                       Text(
                         "$name",
                         style: TextStyle(
-                          fontSize: 90.0,
+                          fontSize: 75.0,
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                           fontStyle: FontStyle.italic
@@ -60,19 +64,19 @@ class CatDetail extends StatelessWidget {
                             children: [
                              
                               Expanded(
-                                child: Column(
+                                child: Row(
 
                                   children: [
                                     Text(
-                                      "Giá",
+                                      "Giá:",
                                       style: TextStyle(
                                         color: Colors.redAccent,
-                                        fontSize: 22.0,
+                                        fontSize: 25.0,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
                                     SizedBox(
-                                      height: 5.0,
+                                      width: 25,
                                     ),
                                     Text(
                                       "$price",
@@ -102,7 +106,7 @@ class CatDetail extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Chi tiết:",
+                    "Giới thiệu:",
                     style: TextStyle(
                         color: Colors.redAccent,
                         fontStyle: FontStyle.normal,
@@ -126,40 +130,17 @@ class CatDetail extends StatelessWidget {
               ),
             ),
           ),
+           SizedBox(
+            height: 50.0,
+          ),
+          Text("Số Điện Thoại Người Bán: $phone"),
           SizedBox(
-            height: 75.0,
+            height: 50.0,
           ),
-           Container(
-            width: 300.00,
-
-            child: FlatButton(
-                onPressed: ()=>launch("tel:$phone"),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(80.0)
-                ),
-                padding: EdgeInsets.all(0.0),
-                child: Ink(
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                        begin: Alignment.centerRight,
-                        end: Alignment.centerLeft,
-                        colors: [Colors.white]
-                    ),
-                    borderRadius: BorderRadius.circular(30.0),
-                  ),
-                  child: Container(
-                    constraints: BoxConstraints(maxWidth: 300.0, minHeight: 75.0),
-                    alignment: Alignment.center,
-                    child: Text("Xem thêm về những chiếc mèo khác mà người này đang bán",
-                      style: TextStyle(color: Colors.black, fontSize: 10.0, fontStyle: FontStyle.italic),
-                    ),
-                  ),
-                )
-            ),
-          ),
+          
           Container(
             width: 300.00,
-
+            height: MediaQuery.of(context).size.height*0.1,
             child: RaisedButton(
                 onPressed: ()=>launch("tel:$phone"),
                 shape: RoundedRectangleBorder(
@@ -186,6 +167,23 @@ class CatDetail extends StatelessWidget {
                 )
             ),
           ),
+           Material(
+                    elevation: 0,
+                    color: Color.fromRGBO(238, 237, 237, 0),
+                    child: MaterialButton(
+                      height: 2,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => otherSelling(phone)),
+                        );
+                      },
+                      child: Text(
+                        "Xem thêm những chiếc mèo mà người này đang bán!!!",
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
         ],
       ),
     );

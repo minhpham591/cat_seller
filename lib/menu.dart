@@ -37,7 +37,7 @@ class _MyStatefulWidgetState extends State<Menu> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('HOOMAN CHOICE',style: TextStyle(fontSize: 30, fontStyle: FontStyle.italic),),
+        title: const Text('HOOMAN CHOICE',style: TextStyle(fontSize: 30, fontStyle: FontStyle.italic, fontFamily: "DancingScript"),),
         centerTitle: true,
       ),
       body: Center(

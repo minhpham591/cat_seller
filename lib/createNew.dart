@@ -13,7 +13,9 @@ String name = "";
 String price = "";
 String description = "";
 AddNew _addNew= new AddNew(name, price, phone, description);
-
+var insController = TextEditingController();
+var insController1 = TextEditingController();
+var insController2 = TextEditingController();
 class NewCreate extends StatefulWidget {
   NewCreate(String _phone) {
     phone = _phone;
@@ -27,6 +29,9 @@ showAlertSuccessUpdate(BuildContext context) {
       child: Text("OK"),
       color: Colors.orangeAccent,
       onPressed: () {
+        insController.clear();
+        insController1.clear();
+        insController2.clear();
         Navigator.of(context).pop();
 
       },
@@ -122,6 +127,8 @@ class _NewCreate extends State<NewCreate> {
                   ),
                   SizedBox(height: 15),
                   TextFormField(
+                    textCapitalization: TextCapitalization.words,
+                    controller: insController,
                     style: style,
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
@@ -141,6 +148,7 @@ class _NewCreate extends State<NewCreate> {
                   ),
                   SizedBox(height: 10),
                   TextFormField(
+                  controller: insController1,
                     style: style,
                     decoration: InputDecoration(
                         contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
@@ -159,6 +167,7 @@ class _NewCreate extends State<NewCreate> {
                   ),
                   SizedBox(height: 10),
                   TextFormField(
+                    controller: insController2,
                     style: style,
                     decoration: InputDecoration(
                         contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),

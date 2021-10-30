@@ -31,7 +31,7 @@ class mySelling extends StatelessWidget {
                 margin: const EdgeInsets.all(1.0),
                       padding: const EdgeInsets.all(1.0),
                       width: MediaQuery.of(context).size.width,
-                      height: 25,
+                      height: MediaQuery.of(context).size.height*0.1,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(color: Colors.grey, width: 0.25),
@@ -45,10 +45,11 @@ class mySelling extends StatelessWidget {
                             ),
                           ],
                           borderRadius: BorderRadius.circular(10)),
-                          child: Row(children: [
-                            new Text(document.data()['name']),
-                            new SizedBox(width: MediaQuery.of(context).size.width*0.4,),
-                            new Text(document.data()['price'])
+                          child: Column(
+                            children: [
+                            new Text('Chủng loại: ${document.data()["name"]}', style: TextStyle(color: Colors.black,  fontWeight: FontWeight.bold, fontSize: 20) ),
+                            new SizedBox(height: MediaQuery.of(context).size.height*0.05),
+                            new Text('Giá: ${document.data()["price"]}', style: TextStyle(color: Colors.redAccent, fontStyle: FontStyle.italic))
                           ],),
               ),
             );
